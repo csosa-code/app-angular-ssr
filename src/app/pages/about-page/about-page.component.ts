@@ -13,9 +13,9 @@ export default class AboutPageComponent implements OnInit {
   private meta = inject(Meta);
 
   ngOnInit(): void {
-    this.title.setTitle('About Page');
-    this.meta.updateTag({ name: 'description', content: 'This is the about page' });
-    this.meta.updateTag({ name: 'og:title', content: 'About Page' });
-    this.meta.updateTag({ name: 'keywords', content: 'about, page, angular' });
+    this.title.setTitle('Acerca de PokeApp');
+    this.meta.updateTag({ name: 'description', content: 'Esta es la página de acerca de PokeApp' });
+    this.meta.updateTag({ name: 'og:title', content: 'Acerca de PokeApp' });
+    this.meta.updateTag({ name: 'keywords', content: 'acerca, de, pokeapp, page, angular' });
   }
 }

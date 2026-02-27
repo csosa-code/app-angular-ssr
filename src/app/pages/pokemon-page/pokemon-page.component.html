@@ -1,0 +1,91 @@
+@if (pokemon(); as p) {
+  <div class="max-w-2xl mx-auto">
+    <a routerLink="/pokemons" class="inline-flex items-center gap-2 text-slate-300 hover:text-white mb-6 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+      </svg>
+      Volver a la lista
+    </a>
+
+    <div class="bg-slate-900/50 rounded-2xl shadow-xl overflow-hidden border border-slate-700/50">
+      <div class="bg-gradient-to-b from-slate-800 to-slate-900 p-8 text-center">
+        <img
+          [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + p.id + '.png'"
+          [alt]="p.name"
+          class="w-48 h-48 mx-auto drop-shadow-2xl"
+          width="192"
+          height="192"
+        >
+        <h1 class="text-4xl font-bold capitalize text-white mt-4">{{ p.name }}</h1>
+        <p class="text-slate-400 text-sm">#{{ p.id | number:'3.0-0' }}</p>
+
+        <div class="flex flex-wrap justify-center gap-2 mt-4">
+          @for (type of p.types; track type.slot) {
+            <span class="px-4 py-1 rounded-full text-sm font-medium bg-slate-600/80 text-white capitalize">
+              {{ type.type.name }}
+            </span>
+          }
+        </div>
+      </div>
+
+      <div class="p-6 space-y-6">
+        <section>
+          <h2 class="text-lg font-semibold text-slate-300 mb-3">Características</h2>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-slate-800/50 rounded-lg p-4 text-center">
+              <p class="text-slate-400 text-sm">Altura</p>
+              <p class="text-xl font-bold text-white">{{ p.height / 10 }} m</p>
+            </div>
+            <div class="bg-slate-800/50 rounded-lg p-4 text-center">
+              <p class="text-slate-400 text-sm">Peso</p>
+              <p class="text-xl font-bold text-white">{{ p.weight / 10 }} kg</p>
+            </div>
+            <div class="bg-slate-800/50 rounded-lg p-4 text-center">
+              <p class="text-slate-400 text-sm">Experiencia base</p>
+              <p class="text-xl font-bold text-white">{{ p.base_experience }}</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-slate-300 mb-3">Estadísticas</h2>
+          <div class="space-y-3">
+            @for (stat of p.stats; track stat.stat.name) {
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span class="capitalize text-slate-300">{{ formatStatName(stat.stat.name) }}</span>
+                  <span class="font-medium text-white">{{ stat.base_stat }}</span>
+                </div>
+                <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full transition-all duration-500"
+                    [style.width.%]="getStatPercent(stat.base_stat)"
+                  ></div>
+                </div>
+              </div>
+            }
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-semibold text-slate-300 mb-3">Habilidades</h2>
+          <div class="flex flex-wrap gap-2">
+            @for (ability of p.abilities; track ability.ability?.name) {
+              <span class="px-3 py-1.5 rounded-lg bg-slate-700/80 text-slate-200 capitalize text-sm">
+                {{ ability.ability?.name }}
+                @if (ability.is_hidden) {
+                  <span class="text-slate-500 text-xs">(oculta)</span>
+                }
+              </span>
+            }
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="flex flex-col items-center justify-center min-h-[400px] gap-4">
+    <div class="w-16 h-16 border-4 border-slate-600 border-t-blue-500 rounded-full animate-spin"></div>
+    <p class="text-slate-400">Cargando Pokémon...</p>
+  </div>
+}

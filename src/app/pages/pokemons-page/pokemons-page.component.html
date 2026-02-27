@@ -1,0 +1,18 @@
+<h1 class="text-3xl font-bold">Lista de Pokemons</h1>
+<hr class="my-2">
+<h3 class="text-gray-500 mb-4" >Pagina actual: {{ currentPage() }}</h3>
+
+@if(pokemons().length > 0) {
+    <pokemon-list [pokemons]="pokemons()" />
+} @else {
+    <pokemon-list-skeleton />
+}
+
+<div class="flex justify-between mt-4">
+    <button (click)="getPokemons(-1)"  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:bg-slate-600 transition-all">
+        Anterior
+    </button>
+    <button (click)="getPokemons(+1)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 disabled:bg-slate-600 transition-all">
+        Siguiente
+    </button>
+</div>

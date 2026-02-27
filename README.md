@@ -1,59 +1,43 @@
-# 03AppSsr
+# PokeApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+Aplicación web para explorar Pokémon, desarrollada con **Angular** y **Server-Side Rendering (SSR)**.
+
+## Descripción
+
+PokeApp permite consultar la lista de Pokémon con paginación y ver el detalle completo de cada uno: estadísticas, tipos, habilidades, altura, peso e imagen oficial. Los datos se obtienen de la [PokeAPI](https://pokeapi.co).
+
+## Características principales
+
+- **Lista de Pokémon** con paginación
+- **Vista detalle** con información completa de cada Pokémon
+- **SSR (Server-Side Rendering)** — Las páginas se generan en el servidor para mejor rendimiento y SEO
+- **SEO optimizado** — Meta tags dinámicos (title, description, og:image) por Pokémon
+
+## Tecnologías utilizadas
+
+- **Angular 21** — Framework principal
+- **Angular SSR** — Renderizado del lado del servidor
+- **Tailwind CSS** — Estilos
+- **RxJS** — Gestión de datos async
 
 ## Development server
-
-To start a local development server, run:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Production build
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
 ## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+For more information on using the Angular CLI, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

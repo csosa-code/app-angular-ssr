@@ -1,6 +1,37 @@
-<h1 class="text-3xl font-bold underline">About Page</h1>
-<hr class="my-2">
+<h1 class="text-3xl font-bold">Acerca de PokeApp</h1>
+<hr class="my-6 border-slate-600">
 
-<section>
-    <p class="mb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa quo, cum soluta obcaecati odio mollitia reiciendis, amet dignissimos porro, voluptate voluptas iste recusandae at ipsam impedit fugiat. Dicta, cum ut?</p>
+<section class="space-y-6">
+  <div>
+    <h2 class="text-xl font-semibold text-slate-200 mb-2">¿Qué es PokeApp?</h2>
+    <p class="text-slate-300 leading-relaxed">
+      PokeApp es una aplicación web para explorar el mundo Pokémon. Permite consultar la lista de Pokémon disponibles
+      y ver el detalle completo de cada uno: estadísticas, tipos, habilidades, altura, peso y más.
+    </p>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-semibold text-slate-200 mb-2">Funcionalidades</h2>
+    <ul class="list-disc list-inside text-slate-300 space-y-2">
+      <li><strong class="text-slate-200">Lista de Pokémon</strong> — Navega por el catálogo con paginación</li>
+      <li><strong class="text-slate-200">Vista detalle</strong> — Información completa de cada Pokémon (stats, tipos, habilidades)</li>
+      <li><strong class="text-slate-200">Datos en tiempo real</strong> — Consume la API pública de <a href="https://pokeapi.co" target="_blank" rel="noopener" class="text-blue-400 hover:text-blue-300 underline">PokeAPI</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <h2 class="text-xl font-semibold text-slate-200 mb-2">Tecnología</h2>
+    <p class="text-slate-300 leading-relaxed mb-3">
+      La aplicación está desarrollada con <strong class="text-slate-200">Angular</strong> y utiliza
+      <strong class="text-slate-200">Server-Side Rendering (SSR)</strong>. Esto significa que las páginas se generan
+      en el servidor antes de enviarse al navegador, lo que mejora el SEO, la velocidad de carga inicial y la
+      experiencia en dispositivos con conexión limitada.
+    </p>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-3 py-1 rounded-lg bg-slate-700/80 text-slate-300 text-sm">Angular</span>
+      <span class="px-3 py-1 rounded-lg bg-slate-700/80 text-slate-300 text-sm">SSR</span>
+      <span class="px-3 py-1 rounded-lg bg-slate-700/80 text-slate-300 text-sm">Tailwind CSS</span>
+      <span class="px-3 py-1 rounded-lg bg-slate-700/80 text-slate-300 text-sm">PokeAPI</span>
+    </div>
+  </div>
 </section>
