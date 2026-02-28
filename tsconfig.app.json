@@ -10,7 +10,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "server.netlify.ts"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]
