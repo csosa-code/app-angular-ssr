@@ -30,9 +30,9 @@ export default class PokemonPageComponent implements OnInit {
       this.meta.updateTag({ name: 'og:title', content: `Pokemon ${pokemon.name}` });
       this.meta.updateTag({ name: 'description', content: `Esta es la página del pokemon ${pokemon.name}` });
       this.meta.updateTag({ name: 'og:description', content: `Esta es la página del pokemon ${pokemon.name}` });
-      // this.meta.updateTag({ name: 'keywords', content: `pokemon, ${pokemon.name}, ${pokemon.types.map(type => type.type.name).join(', ')}` });
-      // this.meta.updateTag({ property: 'og:image', content: imageUrl });
-      // this.meta.updateTag({ property: 'og:image:alt', content: `Imagen oficial de ${pokemon.name}` });
+      this.meta.updateTag({ name: 'keywords', content: `pokemon, ${pokemon.name}, ${pokemon.types.map(type => type.type.name).join(', ')}` });
+      this.meta.updateTag({ property: 'og:image', content: imageUrl });
+      this.meta.updateTag({ property: 'og:image:alt', content: `Imagen oficial de ${pokemon.name}` });
     }))
     .subscribe((pokemon: Pokemon) => {
       this.pokemon.set(pokemon);
