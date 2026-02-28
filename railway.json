@@ -1,0 +1,9 @@
+{
+    "build": {
+      "builder": "nixpacks",
+      "buildCommand": "npm run build"
+    },
+    "deploy": {
+      "startCommand": "node dist/03-app-ssr/server/server.mjs"
+    }
+  }
