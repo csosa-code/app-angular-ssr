@@ -3,7 +3,7 @@
   publish = "dist/03-app-ssr/browser"
 
 [build.environment]
-  SERVER_ENTRY = "server.netlify.ts"
+  SERVER_ENTRY = "src/server.netlify.ts"
 
 [[plugins]]
   package = "@netlify/angular-runtime"
