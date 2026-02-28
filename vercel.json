@@ -1,11 +1,11 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "dist/03-app-ssr/server/server.mjs",
-        "use": "@vercel/node"
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist/03-app-ssr/browser",
+    "functions": {
+      "dist/03-app-ssr/server/server.mjs": {
+        "runtime": "nodejs20.x"
       }
-    ],
+    },
     "routes": [
       {
         "src": "/(.*)",
